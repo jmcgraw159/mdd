@@ -5,16 +5,6 @@ angular.module('mddProjectApp')
 
     FireConn.$bind($scope, 'remoteData');
 
-    // $scope.saveData = function () {
-    //   $scope.remoteData.activeUser = [{
-    //     title:  'test',
-    //     imgUrl: 'url'
-    //   }, {
-    //     title:  'test',
-    //     imgUrl: 'url'
-    //   }, ];
-    // };
-
     // $scope.saveData = function ()  {
     //   FireConn.$add({title: $scope.portfolio.title, url: $scope.portfolio.url, desc: $scope.portfolio.desc, id: $scope.portfolio.id});
     // };
@@ -26,11 +16,9 @@ angular.module('mddProjectApp')
       'Karma'
     ];
 
-    $scope.firecon = FireConn;
+    // $scope.firecon = FireConn;
 
-  }])
+    $scope.remoteData = FireConn;
 
-  .controller('DetailCtrl', function ($scope, $routeParams) {
-    $scope.IdDisplay = $routeParams.id;
-    console.log('Loading detail', $routeParams.id);
-  });
+
+  }]);
