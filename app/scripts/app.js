@@ -1,10 +1,12 @@
 'use strict';
 
-angular.module('mddProjectApp', [
+/*global Firebase */
+var App = angular.module('mddProjectApp', [
   'ngRoute',
   'firebase'
-])
-  .config(function ($routeProvider) {
+]);
+
+App.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.tpl',
@@ -22,3 +24,11 @@ angular.module('mddProjectApp', [
         redirectTo: '/'
       });
   });
+
+App.run(['$firebaseSimpleLogin', '$rootScope', function ($firebaseSimpleLogin, $rootScope)  {
+
+  var db = new Firebase('https://jmportfolio.firebaseio.com/');
+
+  $rootScope.loginObject = $firebaseSimpleLogin(db);
+
+}]);
