@@ -14,6 +14,10 @@ angular.module('mddProjectApp', [
         templateUrl : 'views/detail.tpl',
         controller : 'DetailCtrl'
       })
+      .when('/admin', {
+        templateUrl : 'views/admin.tpl',
+        controller : 'AdminCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
